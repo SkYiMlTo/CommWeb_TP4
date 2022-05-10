@@ -7,7 +7,7 @@ async def hello(websocket, path):
     while True:
         try:
             receivedMessage = await websocket.recv()
-            print("Message reçu : " + receivedMessage)
+            print(f"Message reçu : {receivedMessage}")
             for client in clients:
                 await client.send(receivedMessage)
         except websockets.ConnectionClosed:
